@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="rw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories | Relive the moment</title>
+    <link rel="stylesheet" href="wedding_style.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<nav class="main-nav">
+    <a href="#main" class="nav-logo">Relive</a>
+
+    <button type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false">
+        ☰
+    </button>
+<!-- Navigation links -->
+    <div class="nav-links" id="navLinks">
+        <a href="#main">Home</a>
+        <a href="#gallery">Your gallery</a>
+        <a href="#eventForm">Events</a>
+        <a href="signin.html" id="signInNavLink">Sign In</a>
+<span id="userNameNav" hidden></span>
+        <button type="button" id="menuSettingsButton">Settings</button>
+    </div>
+</nav>
+
+    <button id="settingsButton"
+        class="settings-button" type="button"
+        aria-label="Open Settings"
+        title="Open Settings">
+    </button>
+
+    <section id="settingsPage" class="settings-page" hidden>
+        <div class="settings-card">
+
+            <button id="closeSettings" class="close-settings" type="button">
+                ✕ Close
+            </button>
+
+            <p class="settings-label">Settings</p>
+            <h2>Website Settings</h2>
+            <p class="settings-description">
+                Adjust your preferences for a personalized experience.
+            </p>
+
+            <div class="setting-option">
+                <div>
+                    <h3>Dark Theme</h3>
+                    <p>Give the website a darker appearance.</p>
+                </div>
+                <label class="settings-switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span>Enable</span>
+                </label>
+            </div>
+
+            <div class="setting-option">
+                <div>
+                    <h3>Notifications</h3>
+                    <p>Receive updates about new features and events.</p>
+                </div>
+                <label class="settings-switch">
+                    <input type="checkbox" id="notificationsToggle">
+                    <span>Enable</span>
+                </label>
+            </div>
+
+<!-- Profile Settings -->
+ 
+<div class="profile-settings">
+    <h3>My Profile</h3>
+    <p>Choose the name people see on RELIVE.</p>
+
+    <label for="profileDisplayName">Display Name</label>
+    <input
+        type="text"
+        
+        id="profileDisplayName"
+        placeholder="Enter your preferred name"
+        maxlength="40"
+        autocomplete="nickname"
+    >
+
+    <button id="saveProfileName" type="button" class="save-settings">
+        Save Display Name
+    </button>
+
+    <p id="profileMessage" role="status" aria-live="polite"></p>
+
+    <button id="signOutButton" type="button" class="save-settings">
+        Sign Out
+    </button>
+</div>
+
+            <div class="setting-option">
+                <div>
+                    <h3>Photo Display Preference</h3>
+                    <p>Choose your preferred default for future photo features.</p>
+                </div>
+                <select id="photoPrivacy">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+
+            <button id="saveSettings" class="save-settings" type="button">
+                Save My Settings
+            </button>
+
+            <p id="settingsMessage" role="status" aria-live="polite"></p>
+
+        </div>
+    </section>
+
+    <main id="main" class="page">
+
+        <header class="hero">
+            <h1>Stories written. Memories kept</h1>
+            <p class="tagline">Explore journeys, cherish moments, make memories.</p>
+            <button id="hellobutton" class="cta" type="button">What We Offer</button>
+        </header>
+
+        <section id="gallery">
+            <h2 class="floating-text">Your Gallery</h2>
+            <p>Upload and manage your favorite moments.</p>
+            <div class="gallery-controls">
+
+    <label for="photoUpload" class="upload-button">
+        + Add Photos
+    </label>
+
+    <input
+        type="file"
+        id="photoUpload"
+        accept="image/*"
+        multiple
+        hidden
+    >
+</div>
+            <div class="gallery-grid">
+ <!-- Photos from the backend will be added here as <img> tags. -->
+ <p class="gallery-empty">No photos yet. Photos you upload will appear here.</p>
+  </div>
+        </section>
+<section class="events" id="events">
+    <h2>Mark your events</h2>
+    <p class="p1">Mark special moments you want to remember!</p>
+
+    <form id="eventForm" class="event-form">
+        <label for="eventName">Event name</label>
+        <input
+            type="text"
+            id="eventName"
+            placeholder="e.g. Wedding anniversary"
+            required
+        >
+
+        <label for="eventDate">Date</label>
+        <input type="date" id="eventDate" required>
+
+        <label for="eventTime">Time (optional)</label>
+        <input type="time" id="eventTime">
+
+        <label for="eventDescription">Description (optional)</label>
+        <textarea
+            id="eventDescription"
+            placeholder="Write a little about this special moment..."
+            rows="3"
+        ></textarea>
+
+        <button type="submit">+ Mark Event</button>
+    </form>
+
+    <div id="eventList" class="event-list"></div>
+</section>
+
+    </main>
+
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script src="javascript.js"></script>
+<script src="navigation-auth.js"></script>
+
+</body>

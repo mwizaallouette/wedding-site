@@ -1,0 +1,98 @@
+
+/* =====================================
+   RELIVE PROFILE SETTINGS
+===================================== */
+
+.profile-settings {
+    margin: 24px 0;
+    padding: 24px;
+    background: linear-gradient(145deg, #577d6c, #598065);
+    border: 1px solid #abd2bb;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(100, 50, 100, 0.08);
+}
+
+.profile-settings h3 {
+    margin: 0 0 8px;
+    color: #325748;
+    font-size: 1.4rem;
+}
+
+.profile-settings > p {
+    color: #0d1a12;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
+
+.profile-settings label {
+    display: block;
+    margin-bottom: 8px;
+    color: #10221b;
+    font-weight: 600;
+}
+
+.profile-settings input[type="text"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    margin-bottom: 16px;
+    border: 1px solid #aac1c0;
+    border-radius: 12px;
+    background: #b9d0c7;
+    color: #1e2f2a;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-settings input[type="text"]:focus {
+    border-color: #396b5f;
+    box-shadow: 0 0 0 4px rgba(166, 107, 181, 0.15);
+}
+
+.profile-settings button {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 4px 0 12px;
+    border: none;
+    border-radius: 12px;
+    background: #315747;
+    color: #030e07;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.profile-settings button:hover {
+    background: #498f72;
+    transform: translateY(-2px);
+}
+
+.profile-settings button:focus-visible {
+    outline: 3px solid #528469;
+    outline-offset: 3px;
+}
+
+.profile-settings button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+#profileMessage {
+    min-height: 1.5em;
+    margin: 4px 0 12px;
+    color: #0f2718;
+    font-size: 0.92rem;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    .profile-settings {
+        padding: 18px;
+        border-radius: 16px;
+    }
+}
+

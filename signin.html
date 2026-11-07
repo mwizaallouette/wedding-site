@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Relive</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <main class="signin-card">
+        <h1>Welcome</h1>
+        <p>Enter the memories, keep the moments.</p>
+
+        <form id="signinForm">
+            
+<input id="displayName" type="text"
+    placeholder="What should RELIVE call you?"
+    autocomplete="nickname"
+    maxlength="40"
+    hidden>
+
+<input id="email" type="email"
+    placeholder="Email address"
+    autocomplete="email"
+    required>
+
+<input id="password" type="password"
+    placeholder="Password"
+    autocomplete="current-password"
+    required minlength="6">
+
+<button type="submit">Sign In</button>
+<button type="button" id="signupButton">
+    Create Account
+</button>
+</form>
+
+
+        <button id="googleButton" type="button">
+            Continue with Google
+        </button>
+
+        <button id="guestButton" type="button">
+            Continue as Guest
+        </button>
+
+        <p id="signinMessage" role="status"></p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="signin.js"></script>
+</body>
+</html>
